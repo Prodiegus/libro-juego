@@ -13,7 +13,7 @@
             </v-btn>
         </div>
     </div>
-
+        <!-- Hola hola holasaaa -->
     <!-- se implementa la descripcion de la pagina de inicio -->
     <div class="descripcion">
         <h2>Espacio para explorar tu creatividad</h2>
