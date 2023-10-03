@@ -26,12 +26,14 @@
 <style >   
     .Titulo{
         font-size: 2rem;
+        color: white;
     }
 
     .encabezado{
         display: flex;
         justify-content: space-between;
         padding-left: 2rem;
+        background-color: black;
     }
 
     .descripcion{
@@ -52,6 +54,7 @@
 
     .botones{
         margin:1%;
+        color: white;
         
     }
 
