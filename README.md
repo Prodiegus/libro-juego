@@ -1,6 +1,6 @@
 # libro-juego
 
-This template should help get you started developing with Vue 3 in Vite.
+Los libros de tipo "Choose your own adventure" o "librojuegos" involucran a los lectores como protagonistas en historias donde toman decisiones cruciales. Estas elecciones determinan la dirección de la trama y pueden conducir a varios tipos de finales: buenos, malos o regulares. El cliente busca desarrollar una aplicación de escritorio que permita a los autores crear estos librojuegos. Los autores ingresan su nombre, título, imágenes y sinopsis, luego agregan páginas con opciones y contenido. Los lectores pueden explorar aventuras, ingresar sus nombres y tomar decisiones que los guían a través de las historias, marcando aventuras como "completadas" cuando llegan a un final.
 
 ## Recommended IDE Setup
 
