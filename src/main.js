@@ -1,7 +1,7 @@
+// Vuetify se implementa para facilitar el desarrollo del programa
+
 import { createApp } from 'vue'
 import App from './App.vue'
-
-// Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
