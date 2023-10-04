@@ -5,9 +5,10 @@
 </script>
 
 <template>
-  <Inicio/>
-  <!--- <Login/> -->
   <!-- <Home/> -->
+  <Inicio/> 
+  <Login/>
+  
 </template>
 
 <style>
