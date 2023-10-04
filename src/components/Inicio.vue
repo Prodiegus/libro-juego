@@ -1,3 +1,4 @@
+
 <!-- se implementa el inicio que va antes del login -->
 <template>
     <div class="encabezado">
@@ -5,9 +6,13 @@
             Bienvenido a Libro-Juegos
         </h1>
         <div class="botones"> <!-- en este div van los botones de la interfaz -->
-            <v-btn class="botonLogin" variant="tonal">
-                Login
+            
+            <v-btn class="botonLogin" variant="tonal" href="/login">
+                Login               
             </v-btn>
+            
+            
+
             <v-btn class="botonSingUp" variant="tonal">
                 SingUp
             </v-btn>
