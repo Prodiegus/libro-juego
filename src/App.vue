@@ -6,7 +6,7 @@
 
 <template>
   <Inicio/>
-  <Login/>
+  <!--- <Login/> -->
   <!-- <Home/> -->
 </template>
 
