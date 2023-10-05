@@ -7,14 +7,15 @@
         </h1>
         <div class="botones"> <!-- en este div van los botones de la interfaz -->
             
-            <v-btn class="botonLogin" variant="tonal" href="/login">
-                Login               
+            
+            <v-btn class="botonLogin" variant="tonal" to="/login">
+                Iniciar sesión              
             </v-btn>
             
             
 
-            <v-btn class="botonSingUp" variant="tonal">
-                SingUp
+            <v-btn class="botonSingUp" variant="tonal" to="/signup">
+                Registrarse
             </v-btn>
         </div>
     </div>
