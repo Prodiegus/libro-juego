@@ -1,9 +1,11 @@
 <script setup>
+  import Inicio from '../components/Inicio.vue';
 </script>
 
 <template>
-  <router-view/>
+  <Inicio/>
 </template>
 
 <style>
+
 </style>
