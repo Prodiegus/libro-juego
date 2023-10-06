@@ -38,7 +38,7 @@ methods: {
     </div>
     <div class="input-container">
         <label for="password">Repite contraseña:</label>
-        <input type="password" id="password2" v-model="password" required>
+        <input type="password" id="password2" v-model="password2" required>
     </div>
     <button type="submit">Registrar</button>
     </form>
