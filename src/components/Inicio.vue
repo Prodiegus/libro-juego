@@ -1,7 +1,6 @@
 
 <!-- se implementa el inicio que va antes del login -->
-<template>
-    
+<template setup>
     <div class="encabezado">
         <h1 class="Titulo">
             Bienvenido a Libro-Juegos
@@ -26,7 +25,7 @@
     </div>
 </template>
 
-<style >   
+<style>   
     .Titulo{
         font-size: 2rem;
         color: white;
@@ -63,5 +62,16 @@
 
     .botonSingUp{
         margin-left:1rem;
+    }
+
+    body{
+        background:url(../../imagenes/fondo.jpg);
+        background-repeat: no-repeat;
+        background-image: fixed;
+        background-image: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
 </style>

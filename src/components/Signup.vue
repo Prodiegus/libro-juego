@@ -46,7 +46,7 @@ methods: {
     </div>
 </template>
   
-<style scoped>
+<style setup>
   /* Estilos generales */
 .login-container {
     display: flex;
