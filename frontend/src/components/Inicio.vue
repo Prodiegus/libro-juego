@@ -1,25 +1,21 @@
 
 <!-- se implementa el inicio que va antes del login -->
-<template>
+<template setup>
     <div class="encabezado">
         <h1 class="Titulo">
             Bienvenido a Libro-Juegos
         </h1>
         <div class="botones"> <!-- en este div van los botones de la interfaz -->
             
-            
             <v-btn class="botonLogin" variant="tonal" to="/login">
                 Iniciar sesión              
             </v-btn>
             
-            
-
             <v-btn class="botonSingUp" variant="tonal" to="/signup">
                 Registrarse
             </v-btn>
         </div>
     </div>
-        <!-- Hola hola holasaaa -->
     <!-- se implementa la descripcion de la pagina de inicio -->
     <div class="descripcion">
         <h2>Espacio para explorar tu creatividad</h2>
@@ -29,7 +25,7 @@
     </div>
 </template>
 
-<style >   
+<style setup>   
     .Titulo{
         font-size: 2rem;
         color: white;
@@ -66,5 +62,16 @@
 
     .botonSingUp{
         margin-left:1rem;
+    }
+
+    body{
+        background:url(../../imagenes/fondo.jpg);
+        background-repeat: no-repeat;
+        background-image: fixed;
+        background-image: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
 </style>
