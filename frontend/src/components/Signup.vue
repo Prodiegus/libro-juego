@@ -33,19 +33,19 @@ methods: {
         <input type="text" id="username" v-model="username" required>
     </div>
     <div class="input-container">
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" v-model="password" required>
+        <label for="password">Correo:</label>
+        <input type="text" id="correo" v-model="username" required>
     </div>
     <div class="input-container">
-        <label for="password">Repite contraseña:</label>
-        <input type="password" id="password2" v-model="password" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" v-model="password" required>
     </div>
     <button type="submit">Registrar</button>
     </form>
     </div>
     </div>
 </template>
-  
+
 <style setup>
   /* Estilos generales */
 .login-container {

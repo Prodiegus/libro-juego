@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<style>   
+<style setup>   
     .Titulo{
         font-size: 2rem;
         color: white;
