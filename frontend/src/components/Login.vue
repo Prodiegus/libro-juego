@@ -14,7 +14,7 @@
             <label for="password">Contraseña:</label>
             <input type="password" id="password" v-model="password" required>
           </div>
-          <button type="submit">Iniciar Sesión</button>
+          <v-btn class="submit" type= "submit" to="/LectorHome">Iniciar sesión</v-btn>
         </form>
       </div>
     </div>
