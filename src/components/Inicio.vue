@@ -1,25 +1,22 @@
 
 <!-- se implementa el inicio que va antes del login -->
 <template>
+    
     <div class="encabezado">
         <h1 class="Titulo">
             Bienvenido a Libro-Juegos
         </h1>
         <div class="botones"> <!-- en este div van los botones de la interfaz -->
             
-            
             <v-btn class="botonLogin" variant="tonal" to="/login">
                 Iniciar sesión              
             </v-btn>
             
-            
-
             <v-btn class="botonSingUp" variant="tonal" to="/signup">
                 Registrarse
             </v-btn>
         </div>
     </div>
-        <!-- Hola hola holasaaa -->
     <!-- se implementa la descripcion de la pagina de inicio -->
     <div class="descripcion">
         <h2>Espacio para explorar tu creatividad</h2>
