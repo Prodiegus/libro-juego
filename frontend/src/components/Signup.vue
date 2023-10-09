@@ -1,13 +1,22 @@
 <script>
+import API from '@/api';
 export default {
 data() {
     return {
-    username: '',
-    password: '',
+    usuario: '',
+    correo: '',
+    contraseña: '',
     };
 },
 methods: {
-    Signup() {
+    async crearcuenta() {
+        const respuesta = await API.addusuario(
+            {
+                "nombre": this.usuario,
+                "correo": this.correo,
+                "contraseña": this.contraseña
+            }
+        )
       // agregar la lógica para enviar los datos de inicio de sesión al servidor
     
       // En este ejemplo, simplemente mostraremos un mensaje en la consola.
@@ -30,17 +39,17 @@ methods: {
     <form @submit.prevent="login">
     <div class="input-container">
         <label for="username">Nombre de usuario:</label>
-        <input type="text" id="username" v-model="username" required>
+        <input type="text" id="username" v-model="usuario" required>
     </div>
     <div class="input-container">
         <label for="password">Correo:</label>
-        <input type="text" id="correo" v-model="username" required>
+        <input type="text" id="correo" v-model="correo" required>
     </div>
     <div class="input-container">
         <label for="password">Contraseña:</label>
-        <input type="password" id="password" v-model="password" required>
+        <input type="password" id="password" v-model="contraseña" required>
     </div>
-    <button type="submit">Registrar</button>
+    <v-btn type="submit" @click="crearcuenta">Registrar</v-btn>
     </form>
     </div>
     </div>
