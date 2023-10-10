@@ -11,4 +11,16 @@ static async addusuario(data){
             return error.respose.data
         }
     }
+
+
+static async loginusuario(){
+        try {
+            const res = await axios.get(url+"loginusuario")
+            console.log(res)
+            return res
+        } catch (error) {
+            return error
+        }
+    }    
 }
+
