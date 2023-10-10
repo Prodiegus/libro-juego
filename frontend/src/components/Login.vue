@@ -1,3 +1,29 @@
+<script>
+import API from '@/api';
+export default {
+data() {
+    return {
+    usuario: '',
+    contraseña: '',
+    };
+},
+methods: {
+    async logear() {
+        const respuesta = await API.loginusuario(
+            {
+                "nombre": this.usuario,
+                "contraseña": this.contraseña
+            }
+        )
+      // agregar la lógica para enviar los datos de inicio de sesión al servidor
+    
+      // En este ejemplo, simplemente mostraremos un mensaje en la consola.
+      console.log('logeando como:', this.username, this.password); /* ver tema de confirmacion de contraseña */
+    },
+},
+};
+</script>
+
 <template>
     <div class="login-container">
       <div class="image-container">
@@ -14,30 +40,13 @@
             <label for="password">Contraseña:</label>
             <input type="password" id="password" v-model="password" required>
           </div>
-          <button type="submit">Iniciar Sesión</button>
+          <v-btn class="submit" @click="logear" type= "submit" to="/LectorHome">Iniciar sesión</v-btn>
         </form>
       </div>
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        username: '',
-        password: '',
-      };
-    },
-    methods: {
-      login() {
-        // agregar la lógica para enviar los datos de inicio de sesión al servidor
-      
-        // En este ejemplo, simplemente mostraremos un mensaje en la consola.
-        console.log('Iniciando sesión con:', this.username, this.password);
-      },
-    },
-  };
-  </script>
+  
   
   <style scoped>
   /* Estilos generales */
