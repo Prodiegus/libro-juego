@@ -8,7 +8,7 @@
         
         </h1>
         <div>
-            <router-link to="">Logout</router-link>
+            <router-link to="/">Logout</router-link>
             
             <v-btn class="avatarbutton" icon="mdi-account" size="small">
                 <v-avatar>
