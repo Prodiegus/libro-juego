@@ -1,5 +1,23 @@
 
 <!-- se implementa el inicio que va antes del login -->
+<script>
+    import API from '@/api';
+    export default {
+    data() {
+        return {
+            usuario:'',
+            contraseña:''
+        };
+    },
+
+    mounted() {
+    },
+
+    methods: {
+    },
+};
+</script>
+
 <template setup>
     <div class="encabezado">
         <h1 class="Titulo">
@@ -7,7 +25,7 @@
         </h1>
         <div class="botones"> <!-- en este div van los botones de la interfaz -->
             
-            <v-btn class="botonLogin" variant="tonal" to="/login">
+            <v-btn class="botonLogin" @click="login" variant="tonal" to="/login">
                 Iniciar sesión              
             </v-btn>
             

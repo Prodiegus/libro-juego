@@ -5,17 +5,6 @@ const usuarioSchema = new Schema({
     nombre: String,
     correo: {type:String,unique:true},
     contrasena:String,
-    actividad:String,
-    imagenperfil:String,
-    eschofer: Boolean,
-    vehiculo:{
-        imagen:String,
-        patente:String,
-        marca:String,
-        modelo:String
-    },
-    viajes: [{ type: Schema.Types.ObjectId, ref: 'Viaje' }],/* guarda hartos esquemas de una (referencia esquema) */
-
 },{ versionKey: false }
 );
 
