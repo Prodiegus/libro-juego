@@ -1,3 +1,20 @@
+<script>
+  export default {
+    data() {
+      return {
+        desserts: [
+          {
+            name: 'Frozen Yogurt',
+            fechaedit: '10/09/2023',
+            estado: 'Publicado'
+
+          },
+        ],
+      }
+    },
+  }
+</script>
+
 <template>
     <div class="encabezado">
         <h1 class="Titulo"  >
@@ -34,8 +51,8 @@
                     :key="item.name"
                 >
                     <td>{{ item.name }}</td>
-                    <td>{{ item.fecha }}</td>
-                    <td>{{ item.autor }}</td>
+                    <td>{{ item.fechaedit }}</td>
+                    <td>{{ item.estado }}</td>
                 </tr>
             </tbody>
         </v-table>
@@ -66,14 +83,18 @@
     .botones{
         margin:1%;
         color: white;
-        justify-content: space-between
+        justify-content: flex-end;
+        float: left;
     }
     
     .botoneditar{
         margin-left: 1rem;
+        
+        justify-content: flex-end;
     }
     .botoncrear{
         margin-left: 1rem;
+        justify-content: flex-end;
     }
 
 
