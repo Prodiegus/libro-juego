@@ -1,5 +1,5 @@
 <template>
-<div class="encabezado">
+  <div class="encabezado">
         <div>
           <v-btn to="/autorhome">Ser autor</v-btn>
         </div>

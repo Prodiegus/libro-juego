@@ -70,7 +70,7 @@
 
 
         <div class="botones">
-            <v-btn class="botoneditar">
+            <v-btn class="botoneditar" to="/editarlibro">
                 Editar Historia
             </v-btn>
             <v-btn class="botonecrear">
