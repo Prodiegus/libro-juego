@@ -1,9 +1,11 @@
 <template>
 <div class="encabezado">
-        <h1 class="Titulo" width="auto">
-            Hay una increíble historia esperando por tí
-            
-        </h1>
+        <div>
+          <v-btn to="/autorhome">Ser autor</v-btn>
+        </div>
+        <div>
+          <h1 style="color: white;"> Hay una increible historia esperando por ti </h1>
+        </div>
         <div>
             <router-link to="/">Logout</router-link>
             

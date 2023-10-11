@@ -17,9 +17,15 @@
 
 <template>
     <div class="encabezado">
-        <h1 class="Titulo"  >
-            Crea historias maravillosas    
-        </h1>
+        <div>
+          <v-btn to="/lectorhome">Ser lector</v-btn>
+        </div>
+        <div>
+            <h1 class="Titulo" >
+                Crea historias maravillosas    
+            </h1>
+        </div>
+        
         <div>
             <router-link to="/">Logout</router-link>            
             <v-btn class="avatarbutton" icon="mdi-account" size="small">
