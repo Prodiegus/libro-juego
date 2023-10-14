@@ -13,13 +13,15 @@ static async addusuario(data){
     }
 
 
-static async loginusuario(){
+static async loginusuario(data){
         try {
-            const res = await axios.get(url+"loginusuario")
+            const res = await axios.post(url+"loginusuario",data)
             console.log(res)
-            return res
+            return res.data
         } catch (error) {
+            console.log(error)
             return error
+            
         }
     }    
 }

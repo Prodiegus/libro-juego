@@ -1,4 +1,5 @@
 <script>
+import Swal from 'sweetalert2';
 import API from '@/api';
 export default {
 data() {
@@ -9,16 +10,45 @@ data() {
 },
 methods: {
     async logear() {
-        const respuesta = await API.loginusuario(
+        await API.loginusuario(
             {
-                "nombre": this.usuario,
+                "usuario": this.usuario,
                 "contraseña": this.contraseña
             }
         )
+        .then((respuesta) => 
+        {
+          console.log(respuesta)
+          if (respuesta.Login == true){
+            Swal.fire({
+                icon: 'success',
+                title: 'Logeo Exitoso',
+                
+                
+              })
+            console.log("Logeo exitoso")
+            this.$router.push({ path: '/LectorHome' })
+
+          } else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error de Logeo',
+                text: 'Usuario o Contraseña incorrectos'
+                
+              })
+            console.log("Error de logeo")
+          }
+        }
+          )
+          .catch((err) => {
+          console.log(err)
+          
+        });
       // agregar la lógica para enviar los datos de inicio de sesión al servidor
     
       // En este ejemplo, simplemente mostraremos un mensaje en la consola.
-      console.log('logeando como:', this.username, this.password); /* ver tema de confirmacion de contraseña */
+      /* console.log('logeando como:', this.username, this.password); /* ver tema de confirmacion de contraseña */
+      
     },
 },
 };
@@ -34,13 +64,13 @@ methods: {
         <form @submit.prevent="login">
           <div class="input-container">
             <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" v-model="username" required>
+            <input type="text" id="username" v-model="usuario" required>
           </div>
           <div class="input-container">
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" v-model="password" required>
+            <input type="password" id="password" v-model="contraseña" required>
           </div>
-          <v-btn class="submit" @click="logear" type= "submit" to="/LectorHome">Iniciar sesión</v-btn>
+          <v-btn class="submit" @click="logear" type= "submit" >Iniciar sesión</v-btn>
         </form>
       </div>
     </div>
