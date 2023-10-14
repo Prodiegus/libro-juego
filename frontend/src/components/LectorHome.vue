@@ -1,14 +1,13 @@
 <template>
-<div class="encabezado">
-        <h1 class="Titulo"  >
-            Hay una increíble historia esperando por tí
-        
-            
-        
-        
-        </h1>
+  <div class="encabezado">
         <div>
-            <router-link to="">Logout</router-link>
+          <v-btn to="/autorhome">Ser autor</v-btn>
+        </div>
+        <div>
+          <h1 style="color: white;"> Hay una increible historia esperando por ti </h1>
+        </div>
+        <div>
+            <router-link to="/">Logout</router-link>
             
             <v-btn class="avatarbutton" icon="mdi-account" size="small">
                 <v-avatar>
@@ -39,8 +38,42 @@
       <tr
         v-for="item in desserts"
         :key="item.name"
+
+
       >
-        <td>{{ item.name }}</td>
+      <v-btn variant="text" @click="dialog = true"> <td>{{ item.name }}</td></v-btn>
+        <v-dialog v-model="dialog" width="auto">
+          <v-card class="mx-auto" max-width="400">
+    <v-img
+      class="align-end text-white"
+      height="500"
+      src="https://mangasnoelu.cl/wp-content/uploads/2023/04/ONE-PIECE-01-EDICION-3-EN-1.jpg"
+      cover
+    >
+      <v-card-title>One Piece
+      </v-card-title>
+    </v-img>
+
+    <v-card-subtitle class="pt-4"> Descripción: </v-card-subtitle>
+
+    <v-card-text>
+      <div>
+        One Piece narra la historia de un joven llamado Monkey D. Luffy, 
+        que inspirado por su amigo pirata Shanks, comienza un viaje para 
+        alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá 
+        encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger. 
+        Descubre todos los manga de esta serie tan aclamada por los lectores.
+      </div>
+    </v-card-text>
+
+    <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="red-lighten-2" variant="text" to="/SeleccionLibro" @click="dialog = false">
+            Iniciar
+          </v-btn>
+        </v-card-actions>
+  </v-card>
+        </v-dialog>
         <td>{{ item.fecha }}</td>
         <td>{{ item.autor }}</td>
       </tr>
@@ -49,62 +82,61 @@
 
     </body>
 
-
-
 </template>
 <script>
   export default {
     data() {
       return {
+        dialog: false,
         desserts: [
-          {
-            name: 'Frozen Yogurt',
+          {      
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
 
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
           {
-            name: 'Frozen Yogurt',
+            name: 'Una Aventura Maravillosa 1',
             fecha: '10/09/2023',
             autor: 'Autor 1'
           },
