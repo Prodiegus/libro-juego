@@ -12,7 +12,7 @@ methods: {
     async crearcuenta() {
         const respuesta = await API.addusuario(
             {
-                "nombre": this.usuario,
+                "usuario": this.usuario,
                 "correo": this.correo,
                 "contraseña": this.contraseña
             }
@@ -20,7 +20,7 @@ methods: {
       // agregar la lógica para enviar los datos de inicio de sesión al servidor
     
       // En este ejemplo, simplemente mostraremos un mensaje en la consola.
-      console.log('Registrar usuario con:', this.username, this.password); /* ver tema de confirmacion de contraseña */
+      console.log(Respuesta); /* ver tema de confirmacion de contraseña */
     },
 },
 };
