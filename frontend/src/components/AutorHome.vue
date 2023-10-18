@@ -63,17 +63,11 @@
             </tbody>
         </v-table>
 
-
-
-
-
-
-
         <div class="botones">
             <v-btn class="botoneditar" to="/editarlibro">
                 Editar Historia
             </v-btn>
-            <v-btn class="botonecrear">
+            <v-btn class="botonecrear" to="/crearlibro">
                 Crear Historia
             </v-btn>
         </div>
