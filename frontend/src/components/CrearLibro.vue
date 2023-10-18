@@ -1,3 +1,48 @@
+<script>
+import API from '@/api';
+
+export default {
+  data() {
+      return {
+        previewImage: null,
+        titulo: '',
+        sinopsis: '',
+        autor:''
+      };
+    },
+  methods: {
+    async crearlibro() {
+        const respuesta = await API.addlibro(
+            {
+                "titulo": this.titulo,
+                "sinopsis": this.sinopsis,
+                "autor": this.autor
+            }
+        )
+      // agregar la lógica para enviar los datos de inicio de sesión al servidor
+    
+      // En este ejemplo, simplemente mostraremos un mensaje en la consola.
+      console.log(respuesta); /* ver tema de confirmacion de contraseña */
+    },
+      selectImage () {
+          this.$refs.fileInput.click()
+      },
+      pickFile () {
+        let input = this.$refs.fileInput
+        let file = input.files
+        if (file && file[0]) {
+          let reader = new FileReader
+          reader.onload = e => {
+            this.previewImage = e.target.result
+          }
+          reader.readAsDataURL(file[0])
+          this.$emit('input', file[0])
+        }
+      }
+  }
+};
+</script>
+
 <template>
     <div class="encabezado">
         <div>
@@ -18,7 +63,7 @@
     <body>
         <br>
         <div class="titulo">
-            <v-text-field label="Titulo" variant="outlined" class="titulos"></v-text-field>
+            <v-text-field label="Titulo" variant="outlined" v-model="titulo" class="titulos"></v-text-field>
         </div>
         <br>
         <div class="contenedor">
@@ -28,14 +73,14 @@
             </div>
         
             <div class="sinopsis">
-                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis"></v-textarea>
+                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" ></v-textarea>
             </div>
         </div>
         <div class="botones">
             <v-btn class="botonepagina">
                 Páginas
             </v-btn>
-            <v-btn class="botonecrear">
+            <v-btn class="botonecrear"  @click="crearlibro"> 
                 Guardar
             </v-btn>
         </div>
@@ -45,32 +90,7 @@
 </template>
 
 
-<script>
-export default {
-  data() {
-      return {
-        previewImage: null
-      };
-    },
-  methods: {
-      selectImage () {
-          this.$refs.fileInput.click()
-      },
-      pickFile () {
-        let input = this.$refs.fileInput
-        let file = input.files
-        if (file && file[0]) {
-          let reader = new FileReader
-          reader.onload = e => {
-            this.previewImage = e.target.result
-          }
-          reader.readAsDataURL(file[0])
-          this.$emit('input', file[0])
-        }
-      }
-  }
-}
-</script>
+
 
 
 
