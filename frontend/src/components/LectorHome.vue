@@ -68,7 +68,7 @@
 
     <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="red-lighten-2" variant="text" to="/SeleccionLibro" @click="dialog = false">
+          <v-btn color="red-lighten-2" variant="text" to="mostrarlibro" @click="dialog = false">
             Iniciar
           </v-btn>
         </v-card-actions>
@@ -83,6 +83,7 @@
     </body>
 
 </template>
+
 <script>
   export default {
     data() {
@@ -145,6 +146,7 @@
     },
   }
 </script>
+
 <style>   
     
     .Titulo{

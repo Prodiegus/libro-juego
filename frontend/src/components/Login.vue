@@ -27,7 +27,7 @@ methods: {
                 
               })
             console.log("Logeo exitoso")
-            this.$router.push({ path: '/LectorHome' })
+            this.$router.push({ path: '/lectorhome' })
 
           } else{
             Swal.fire({
