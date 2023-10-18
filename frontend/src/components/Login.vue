@@ -61,6 +61,7 @@ methods: {
       </div>
       <div class="form-container">
         <h2>Iniciar Sesión</h2>
+        <h3>No tienes cuenta <router-link to="signup">Registrate</router-link> <br><br></h3>
         <form @submit.prevent="login">
           <div class="input-container">
             <label for="username">Nombre de usuario:</label>
