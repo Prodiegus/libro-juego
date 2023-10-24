@@ -11,4 +11,29 @@ static async addusuario(data){
             return error.respose.data
         }
     }
+
+
+static async loginusuario(data){
+        try {
+            const res = await axios.post(url+"loginusuario",data)
+            console.log(res)
+            return res.data
+        } catch (error) {
+            console.log(error)
+            return error
+            
+        }
+    }    
+static async addlibro(data){
+        try {
+            const res = await axios.post(url+"addlibro",data)
+            console.log(res.data)
+            return res.data
+        } catch (error) {
+            return error.respose.data
+        }
+    }
+
+
 }
+

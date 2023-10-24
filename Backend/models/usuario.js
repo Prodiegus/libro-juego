@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const usuarioSchema = new Schema({
-    nombre: String,
+    usuario: {type:String,unique:true},
     correo: {type:String,unique:true},
-    contrasena:String,
+    contraseña:String,
 },{ versionKey: false }
 );
 
