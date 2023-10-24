@@ -7,17 +7,21 @@ export default {
         previewImage: null,
         titulo: '',
         sinopsis: '',
-        autor:''
+        autor:'',
+        imagen: '',
+        idusuario: ''
       };
     },
   methods: {
     async crearlibro() {
         const respuesta = await API.addlibro(
             {
-                "titulo": this.titulo,
-                "sinopsis": this.sinopsis,
-                "autor": this.autor
-            }
+            "titulo": this.titulo,
+            "sinopsis": this.sinopsis,
+            "autor": this.$store.state.usuario.usuario,
+            "imagen": this.imagen,
+            "idusuario": this.$store.state.usuario._id
+        }
         )
       // agregar la lógica para enviar los datos de inicio de sesión al servidor
     
@@ -46,7 +50,7 @@ export default {
 <template>
     <div class="encabezado">
         <div>
-          <v-btn to="/autorhome">atras</v-btn>
+        <v-btn to="/autorhome">atras</v-btn>
         </div>
         
         <div>
@@ -67,11 +71,11 @@ export default {
         </div>
         <br>
         <div class="contenedor">
-            <div class="imagen">
+            <!-- <div class="imagen">
                 <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage"> </div>
                 <input ref="fileInput" type="file" @input="pickFile">
-            </div>
-        
+            </div> -->
+            <v-text-field label="Linkimagen" variant="outlined" v-model="imagen" class="titulos"></v-text-field>
             <div class="sinopsis">
                 <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" ></v-textarea>
             </div>

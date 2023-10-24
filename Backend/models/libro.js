@@ -6,7 +6,7 @@ const libroSchema = new Schema({
     sinopsis:String,
     autor:String,
     imagen:String,
-    
+    idusuario:{type: Schema.Types.ObjectId, ref: 'usuario'}
     
 },{ versionKey: false }
 );
