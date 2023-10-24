@@ -19,7 +19,7 @@ export default {
             "titulo": this.titulo,
             "sinopsis": this.sinopsis,
             "autor": this.$store.state.usuario.usuario,
-            "imagen": this.imagen,
+            "imagen": "URL imagen",
             "idusuario": this.$store.state.usuario._id
         }
         )
@@ -71,11 +71,11 @@ export default {
         </div>
         <br>
         <div class="contenedor">
-            <!-- <div class="imagen">
+            <div class="imagen">
                 <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage"> </div>
                 <input ref="fileInput" type="file" @input="pickFile">
-            </div> -->
-            <v-text-field label="Linkimagen" variant="outlined" v-model="imagen" class="titulos"></v-text-field>
+            </div>
+
             <div class="sinopsis">
                 <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" ></v-textarea>
             </div>
