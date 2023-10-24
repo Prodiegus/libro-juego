@@ -1,5 +1,6 @@
 <script>
 import API from '@/api';
+import Swal from 'sweetalert2';
 export default {
 data() {
     return {
@@ -10,17 +11,21 @@ data() {
 },
 methods: {
     async crearcuenta() {
-        const respuesta = await API.addusuario(
-            {
-                "nombre": this.usuario,
+        const respuesta = await API.addusuario( 
+            { 
+            
+                "usuario": this.usuario,
                 "correo": this.correo,
                 "contraseña": this.contraseña
+            }).then((respuesta) => {
+                console.log(respuesta);
+                this.$router.push({ path: '/Login' })
+                return respuesta;
+            }).catch((error) => {
+                console.log(error)
             }
-        )
-      // agregar la lógica para enviar los datos de inicio de sesión al servidor
-    
-      // En este ejemplo, simplemente mostraremos un mensaje en la consola.
-      console.log('Registrar usuario con:', this.username, this.password); /* ver tema de confirmacion de contraseña */
+            
+        );
     },
 },
 };
@@ -49,7 +54,7 @@ methods: {
         <label for="password">Contraseña:</label>
         <input type="password" id="password" v-model="contraseña" required>
     </div>
-    <v-btn type="submit" @click="crearcuenta">Registrar</v-btn>
+    <v-btn type="submit" @click="crearcuenta" >Registrar</v-btn>
     </form>
     </div>
     </div>

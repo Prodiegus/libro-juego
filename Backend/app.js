@@ -35,8 +35,9 @@ app.use(express.urlencoded({ extended: true }));
 /* app.get('/', (req, res) => {
   res.send('Hello World!');
 }); */
-
+app.use('/api', require('./routes/libro'));
 app.use('/api', require('./routes/usuario'));
+app.use('/api', require('./routes/paginas'));
 
 
 // Middleware para Vue.js router modo history

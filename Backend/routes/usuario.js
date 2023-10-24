@@ -8,10 +8,16 @@ import usuarioSchema from '../models/usuario';
 
 router.post('/addusuario', async(req, res) => {
   const body = req.body;  
+  
   const usuario = usuarioSchema(body)    
   await usuario.save()
   .then((result) => {
-    res.json(result)
+    res.json(
+      {"Respuesta" : true
+
+      }
+
+    ) 
     
   })
   .catch((err) => {
@@ -20,5 +26,39 @@ router.post('/addusuario', async(req, res) => {
   }); 
   }
 );
+router.post('/loginusuario', async(req, res) => {
+  const body = req.body;  
+  console.log(body)
+  const usuario = body.usuario
+  await usuarioSchema.findOne(
+    {
+      usuario 
+    }
+  )
+  .then((result) => {
+    if (result.contraseña == body.contraseña){
+      res.json(
+        {
+          "Login" : true,
+          "usuario": result
+        }
+      )
+    }
+    else{
+      res.json(
+        {
+          "Login" : false
+        }
+      )
+    }
+ 
+    
+  })
+  .catch((err) => {
+    console.log(err)
+    res.json(err)
+  });
 
+  }
+);
 module.exports = router;
