@@ -53,7 +53,7 @@ export default {
         <v-btn to="/autorhome">atras</v-btn>
         </div>
         <div>
-            <H1 class="Titulo">Creador de historias</H1>
+            <H1 class="Titulo">"" Nombre historia ""</H1>
         </div>
         <div>
             <router-link to="/">Logout</router-link>
@@ -69,7 +69,7 @@ export default {
     <body>
         <br>
         <div class="titulo">
-            <v-text-field label="Titulo" variant="outlined" v-model="titulo" class="titulos"></v-text-field>
+            <v-text-field label="Titulo de pagina" variant="outlined" v-model="titulo" class="titulos"></v-text-field>
         </div>
         <br>
         <div class="contenedor">
@@ -79,15 +79,16 @@ export default {
             </div>
 
             <div class="sinopsis">
-                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" ></v-textarea>
+                <v-textarea label="Describir pagina" variant="outlined" class="textsinopsis" v-model="sinopsis"></v-textarea>
             </div>
         </div>
+        <br>
+        <div class="contenedor">
+            <v-textarea label="Contenido" variant="outlined" class="contenido" vmodel="contenido"></v-textarea>
+        </div>
         <div class="botones">
-            <v-btn class="botonepagina" to="/crearpagina">
-                Páginas
-            </v-btn>
-            <v-btn class="botonecrear"  @click="crearlibro"> 
-                Guardar
+            <v-btn class="botonepagina">
+                Añadir Pagina
             </v-btn>
         </div>
         
