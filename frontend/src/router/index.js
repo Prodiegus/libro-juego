@@ -63,6 +63,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/MostrandoLibro.vue'),
 
     
+  },
+  {
+    path: '/crearpagina',
+    name: 'crearpagina',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CrearPagina.vue'),
   }
 ]
 
