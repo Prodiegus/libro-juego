@@ -1,14 +1,16 @@
 import express from 'express';
 const router = express.Router();
 
+import paginaSchema from '../models/pagina'
+
 // importar el modelo nota
 /* import libroSchema from '../models/libro'; */
 
-router.post('/addpaginas', async(req, res) => {
+router.post('/addpagina', async(req, res) => {
     const body = req.body; 
 
-    const paginas = paginasSchema(body)
-    await paginas.save()
+    const pagina = paginasSchema(body)
+    await pagina.save()
 
     .then((result) => {
         res.json(
