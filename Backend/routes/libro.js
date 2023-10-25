@@ -4,7 +4,7 @@ const router = express.Router();
 // importar el modelo nota
 import libroSchema from '../models/libro';
 import usuarioSchema from '../models/usuario';
-
+import paginaSchema from '../models/pagina';
 
 
 
@@ -36,6 +36,43 @@ router.post('/addlibro', async(req, res) => {
       console.log(err)
       res.json(err)
     }); 
+  })
+  .catch((err) => {
+    console.log(err)
+    res.json(err)
+  }); 
+  }
+);
+
+router.post('/addpagina', async(req, res) => {
+  const body = req.body;  
+  
+  const pagina = paginaSchema(body.pagina)
+  await pagina.save()
+  .then(async(result) => {
+    
+  
+    await libroSchema.findOneAndUpdate(
+
+      {_id:body.idlibro},
+      {
+        $push: {
+          paginas: result._id
+        }
+      },
+      {
+        new: true
+      }
+    ).populate("paginas")
+    .then((resultado) => {
+      res.json(resultado)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.json(err)
+    });
+
+
   })
   .catch((err) => {
     console.log(err)
