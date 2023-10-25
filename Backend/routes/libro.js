@@ -80,5 +80,22 @@ router.post('/addpagina', async(req, res) => {
   }); 
   }
 );
+router.get('/getlibros', async(req, res) => {
+ 
+  await libroSchema.find(
+    
+  )
+  .then((result) => {
+    res.json(result)
+    console.log(result)
+    
+  })
+  .catch((err) => {
+    console.log(err)
+    res.json(err)
+  });
 
+  }
+  
+);
 module.exports = router;

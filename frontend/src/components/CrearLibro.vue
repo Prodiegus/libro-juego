@@ -13,14 +13,17 @@ export default {
       };
     },
   methods: {
+    
     async crearlibro() {
+       
         const respuesta = await API.addlibro(
             {
             "titulo": this.titulo,
             "sinopsis": this.sinopsis,
             "autor": this.$store.state.usuario.usuario,
             "imagen": "URL imagen",
-            "idusuario": this.$store.state.usuario._id
+            "idusuario": this.$store.state.usuario._id,
+            "fecha": Date.now()
         }
         )
       // agregar la lógica para enviar los datos de inicio de sesión al servidor

@@ -33,7 +33,15 @@ static async addlibro(data){
             return error.respose.data
         }
     }
-
+    static async getlibros(){
+        try {
+            const res = await axios.get(url+"getlibros")
+            console.log(res.data)
+            return res.data
+        } catch (error) {
+            return error.respose.data
+        }
+    }
 
 }
 
