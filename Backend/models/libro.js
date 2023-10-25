@@ -6,7 +6,10 @@ const libroSchema = new Schema({
     sinopsis:String,
     autor:String,
     imagen:String,
-    
+    paginas:[
+        {type: Schema.Types.ObjectId, ref: 'pagina'}
+    ],
+    idusuario:{type: Schema.Types.ObjectId, ref: 'usuario'}
     
 },{ versionKey: false }
 );

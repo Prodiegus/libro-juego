@@ -39,7 +39,8 @@ router.post('/loginusuario', async(req, res) => {
     if (result.contraseña == body.contraseña){
       res.json(
         {
-          "Login" : true
+          "Login" : true,
+          "usuario": result
         }
       )
     }

@@ -26,6 +26,8 @@ methods: {
                 
                 
               })
+            this.$store.state.usuario=respuesta.usuario
+            console.log(this.$store.state.usuario)
             console.log("Logeo exitoso")
             this.$router.push({ path: '/lectorhome' })
 
