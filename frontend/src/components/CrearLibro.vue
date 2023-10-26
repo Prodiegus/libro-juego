@@ -70,7 +70,7 @@
     <body>
         <div class="maincontenedor">
             <div class="titulo">
-                <v-text-field label="Titulo" variant="outlined" class="titulos" v-model="titulo" :maxlength="10" :counter="10"></v-text-field>
+                <v-text-field label="Titulo" variant="outlined" class="titulos" v-model="titulo" :maxlength="30" :counter="30"></v-text-field>
             </div>
             
             <div class="contenedor">
@@ -79,7 +79,7 @@
                     <input ref="fileInput" type="file" @input="pickFile">
                 </div>
                 <div class="sinopsis">
-                    <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" :maxlength="100" :counter="100"></v-textarea>
+                    <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" :maxlength="300" :counter="300"></v-textarea>
                 </div>
             </div>
             <div class="botones">
