@@ -2,8 +2,13 @@
 import API from '@/api';
 import { onMounted } from 'vue';
 export default {
+  /* Vue.component('libro-card', {
+    props: ['titulo', 'sinopsis', 'fecha', 'autor', 'cover_url'],
+    template: '#seleccion'
+  }), */
   data() {
     return {
+   
       dialog: false,
       desserts: [
 
@@ -13,6 +18,7 @@ export default {
 
     console.log("mounted")
     this.getLibros()
+    
   },
   methods: {
     async getLibros() {
@@ -27,9 +33,13 @@ export default {
           console.log(err)
 
         });
-    }
+    },
+
+
+    
   }
 }
+
 </script>
 
 <template>
@@ -72,9 +82,10 @@ export default {
           </v-btn>
           <v-dialog v-model="dialogarray[index]" width="auto">
             <v-card class="mx-auto" width="400">        
-              <v-img class="align-end text-white" height="500"
-                src="https://mangasnoelu.cl/wp-content/uploads/2023/04/ONE-PIECE-01-EDICION-3-EN-1.jpg" cover>
+              <v-img class="align-end text-white" v-for="(item,index) in desserts" :key="item.titulo"
+                :src=item.imagen cover>
               </v-img>
+              <v-field>{{ item.imagen }}</v-field>
               <v-card-title>{{ item.titulo }}
                 </v-card-title>
               <v-card-subtitle class="pt-4"> Descripción: </v-card-subtitle>
