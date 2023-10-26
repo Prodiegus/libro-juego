@@ -6,6 +6,7 @@ const libroSchema = new Schema({
     sinopsis:String,
     autor:String,
     imagen:String,
+    fecha:Date,
     paginas:[
         {type: Schema.Types.ObjectId, ref: 'pagina'}
     ],
