@@ -2,20 +2,23 @@
 import API from '@/api';
 
 export default {
-  data() {
-      return {
-        previewImage: null,
-        titulo: '',
-        sinopsis: '',
-        autor:'',
-        imagen: '',
-        idusuario: ''
-      };
+    data() {
+        return {
+            previewImage: null,
+            titulo: '',
+            sinopsis: '',
+            autor:'',
+            imagen: '',
+            idusuario: '',
+        };
     },
-  methods: {
+    computed: {
+    },
+    methods: {
     
+    
+
     async crearlibro() {
-       
         const respuesta = await API.addlibro(
             {
             "titulo": this.titulo,
@@ -46,7 +49,7 @@ export default {
           this.$emit('input', file[0])
         }
       }
-  }
+  },
 };
 </script>
 
@@ -72,7 +75,7 @@ export default {
     <body>
         <br>
         <div class="titulo">
-            <v-text-field label="Titulo" variant="outlined" v-model="titulo" class="titulos"></v-text-field>
+            <v-text-field label="Titulo" variant="outlined" v-model="titulo" class="titulos" :maxlength="10" :counter="10"></v-text-field>
         </div>
         <br>
         <div class="contenedor">
@@ -82,7 +85,7 @@ export default {
             </div>
 
             <div class="sinopsis">
-                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" ></v-textarea>
+                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" :maxlength="100" :counter="100"></v-textarea>
             </div>
         </div>
         <div class="botones">

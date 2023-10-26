@@ -5,22 +5,24 @@ export default {
   data() {
       return {
         previewImage: null,
-        titulo: '',
-        sinopsis: '',
+        titulopagina: '',
+        descripcion: '',
         autor:'',
         imagen: '',
-        idusuario: ''
+        idusuario: '',
+        contenido:''
       };
     },
   methods: {
-    async crearlibro() {
-        const respuesta = await API.addlibro(
+    async crearpagina() {
+        const respuesta = await API.addpagina(
             {
-            "titulo": this.titulo,
-            "sinopsis": this.sinopsis,
+            "titulo de pagina": this.titulopagina,
+            "sinopsis": this.descripcion,
             "autor": this.$store.state.usuario.usuario,
             "imagen": "URL imagen",
-            "idusuario": this.$store.state.usuario._id
+            "idusuario": this.$store.state.usuario._id,
+            "contenido": this.contenido
         }
         )
       // agregar la lógica para enviar los datos de inicio de sesión al servidor
@@ -44,6 +46,7 @@ export default {
         }
       }
   }
+  
 };
 </script>
 
@@ -69,7 +72,7 @@ export default {
     <body>
         <br>
         <div class="titulo">
-            <v-text-field label="Titulo de pagina" variant="outlined" v-model="titulo" class="titulos"></v-text-field>
+            <v-text-field label="Titulo de pagina" variant="outlined" v-model="titulopagina" class="titulos" :maxlength="10" :counter="10"></v-text-field>
         </div>
         <br>
         <div class="contenedor">
@@ -79,15 +82,15 @@ export default {
             </div>
 
             <div class="sinopsis">
-                <v-textarea label="Describir pagina" variant="outlined" class="textsinopsis" v-model="sinopsis"></v-textarea>
+                <v-textarea label="Describir pagina" variant="outlined" class="textsinopsis" v-model="descripcion" :maxlength="100" :counter="100"></v-textarea>
             </div>
         </div>
         <br>
         <div class="contenedor">
-            <v-textarea label="Contenido" variant="outlined" class="contenido" vmodel="contenido"></v-textarea>
+            <v-textarea label="Contenido" variant="outlined" class="contenido" v-model="contenido" :maxlength="500" :counter="500"></v-textarea>
         </div>
         <div class="botones">
-            <v-btn class="botonepagina">
+            <v-btn class="botonepagina" @click="crearpagina">
                 Añadir Pagina
             </v-btn>
         </div>
@@ -103,37 +106,37 @@ export default {
 
 
 <style>
-.imagePreviewWrapper {
-    width: 250px;
-    height: 250px;
-    display: block;
-    cursor: pointer;
-    margin: 0 auto 30px;
-    background-size: cover;
-    background-position: center center;
-}
-.titulo{
-    width: 25%;
-    margin: 0 auto;
-}
-.contenedor{
-    display: flex;
-    width: 75%;
-    margin: 0 auto;
-}
-.imagen{
-    flex: 1;
-}
-.sinopsis{
-    flex: 1;
-}
-.textsinopsis{
-    width: 100%;
-    height: 100%;
-}
-.botones{
-    margin: 0 auto;
-    color: white;
-}
+    .imagePreviewWrapper {
+        width: 250px;
+        height: 250px;
+        display: block;
+        cursor: pointer;
+        margin: 0 auto 30px;
+        background-size: cover;
+        background-position: center center;
+    }
+    .titulo{
+        width: 25%;
+        margin: 0 auto;
+    }
+    .contenedor{
+        display: flex;
+        width: 75%;
+        margin: 0 auto;
+    }
+    .imagen{
+        flex: 1;
+    }
+    .sinopsis{
+        flex: 1;
+    }
+    .textsinopsis{
+        width: 100%;
+        height: 100%;
+    }
+    .botones{
+        margin: 0 auto;
+        color: white;
+    }
 </style>
 
