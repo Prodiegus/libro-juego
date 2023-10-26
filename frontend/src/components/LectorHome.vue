@@ -1,169 +1,131 @@
-<template>
-  <div class="encabezado">
-        <div>
-          <v-btn to="/autorhome">Ser autor</v-btn>
-        </div>
-        <div>
-          <h1 style="color: white;"> Hay una increible historia esperando por ti </h1>
-        </div>
-        <div>
-            <router-link to="/">Logout</router-link>
-            
-            <v-btn class="avatarbutton" icon="mdi-account" size="small">
-                <v-avatar>
-                    <img src="https://i.pinimg.com/564x/5d/69/42/5d6942c6dff12bd3f960eb30c5fdd0f9.jpg" >
-                </v-avatar>
-            </v-btn>
-            
-        </div>
-     
-    </div>
-    <body>
-        
-  <v-table>
-    <thead>
-      <tr>
-        <th class="text-left">
-          Título
-        </th>
-        <th class="text-left">
-          Fecha
-        </th>
-        <th class="text-left">
-          Autor
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        v-for="item in desserts"
-        :key="item.name"
-
-
-      >
-      <v-btn variant="text" @click="dialog = true"> <td>{{ item.name }}</td></v-btn>
-        <v-dialog v-model="dialog" width="auto">
-          <v-card class="mx-auto" max-width="400">
-    <v-img
-      class="align-end text-white"
-      height="500"
-      src="https://mangasnoelu.cl/wp-content/uploads/2023/04/ONE-PIECE-01-EDICION-3-EN-1.jpg"
-      cover
-    >
-      <v-card-title>One Piece
-      </v-card-title>
-    </v-img>
-
-    <v-card-subtitle class="pt-4"> Descripción: </v-card-subtitle>
-
-    <v-card-text>
-      <div>
-        One Piece narra la historia de un joven llamado Monkey D. Luffy, 
-        que inspirado por su amigo pirata Shanks, comienza un viaje para 
-        alcanzar su sueño, ser el Rey de los piratas, para lo cual deberá 
-        encontrar el tesoro One Piece dejado por el anterior rey de los piratas Gol D. Roger. 
-        Descubre todos los manga de esta serie tan aclamada por los lectores.
-      </div>
-    </v-card-text>
-
-    <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="red-lighten-2" variant="text" to="mostrarlibro" @click="dialog = false">
-            Iniciar
-          </v-btn>
-        </v-card-actions>
-  </v-card>
-        </v-dialog>
-        <td>{{ item.fecha }}</td>
-        <td>{{ item.autor }}</td>
-      </tr>
-    </tbody>
-  </v-table>
-
-    </body>
-
-</template>
-
 <script>
-  export default {
-    data() {
-      return {
-        dialog: false,
-        desserts: [
-          {      
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
+import API from '@/api';
+import { onMounted } from 'vue';
+export default {
+  /* Vue.component('libro-card', {
+    props: ['titulo', 'sinopsis', 'fecha', 'autor', 'cover_url'],
+    template: '#seleccion'
+  }), */
+  data() {
+    return {
+   
+      dialog: false,
+      desserts: [
 
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-          {
-            name: 'Una Aventura Maravillosa 1',
-            fecha: '10/09/2023',
-            autor: 'Autor 1'
-          },
-        ],
-      }
+      ],dialogarray:[]
+    }
+  }, mounted() {
+
+    console.log("mounted")
+    this.getLibros()
+    
+  },
+  methods: {
+    async getLibros() {
+      await API.getlibros()
+        .then((result) => {
+          console.log(result)
+          this.desserts = result
+          this.dialogarray= new Array(this.desserts.length).fill(false);
+          console.log(this.dialogarray)
+        })
+        .catch((err) => {
+          console.log(err)
+
+        });
     },
+
+
+    
   }
+}
+
 </script>
 
+<template>
+  <div class="encabezado">
+    <div>
+      <v-btn to="/autorhome">Ser autor</v-btn>
+    </div>
+    <div>
+      <h1 style="color: white;"> Hay una increible historia esperando por ti </h1>
+    </div>
+    <div>
+      <router-link to="/">Logout</router-link>
+      <v-btn class="avatarbutton" icon="mdi-account" size="small">
+        <v-avatar>
+          <img src="https://i.pinimg.com/564x/5d/69/42/5d6942c6dff12bd3f960eb30c5fdd0f9.jpg">
+        </v-avatar>
+      </v-btn>
+    </div>
+  </div>
+
+  <body>
+    <v-table>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Título
+          </th>
+          <th class="text-left">
+            Fecha
+          </th>
+          <th class="text-left">
+            Autor
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item,index) in desserts" :key="item.titulo">
+          <v-btn variant="text" @click="dialogarray[index] = true">
+            <td>{{ item.titulo }}</td>
+          </v-btn>
+          <v-dialog v-model="dialogarray[index]" width="auto">
+            <v-card class="mx-auto" width="400">        
+              <v-img class="align-end text-white" v-for="(item,index) in desserts" :key="item.titulo"
+                :src=item.imagen cover>
+              </v-img>
+              <v-field>{{ item.imagen }}</v-field>
+              <v-card-title>{{ item.titulo }}
+                </v-card-title>
+              <v-card-subtitle class="pt-4"> Descripción: </v-card-subtitle>
+              <v-card-text>
+                <div>
+                  {{item.sinopsis}}
+                </div>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="red-lighten-2" variant="text" to="mostrarlibro" @click="dialogarray[index] = false">
+                  Iniciar
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+          <td>{{ item.fecha }}</td>
+          <td>{{ item.autor }}</td>
+        </tr>
+      </tbody>
+    </v-table>
+  </body>
+</template>
+
 <style>   
-    
-    .Titulo{
-        font-size: 2rem;
-        color: white;
-        text-align: center;
-    }
-    .avatarbutton{
-        border-color: aqua;
-        border-width: 0.25rem;
-        
+  .Titulo {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
+  body{
+    background-color:#fff8dd ;
+  }
+  .avatarbutton {
+    border-color: aqua;
+    border-width: 0.25rem;
+  }
 
-    }
-
-    .encabezado{
-      
-        display: flex;
-        background-color: black;
-    }
-    </style>
+  .encabezado {
+    display: flex;
+    background-color: black;
+  }
+</style>

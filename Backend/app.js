@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
+import multer from 'multer';
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 }); */
 app.use('/api', require('./routes/libro'));
 app.use('/api', require('./routes/usuario'));
+app.use('/api', require('./routes/pagina'));
 
 
 // Middleware para Vue.js router modo history

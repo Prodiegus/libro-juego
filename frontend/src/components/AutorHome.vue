@@ -1,31 +1,29 @@
 <script>
-  export default {
-    data() {
-      return {
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            fechaedit: '10/09/2023',
-            estado: 'Publicado'
-
-          },
-        ],
-      }
-    },
-  }
+    export default {
+        data() {
+            return {
+                desserts: [
+                    {
+                    name: 'Frozen Yogurt',
+                    fechaedit: '10/09/2023',
+                    estado: 'Publicado'
+                    },
+                ],
+            }
+        },
+    }
 </script>
 
 <template>
     <div class="encabezado">
         <div>
-          <v-btn to="/lectorhome">Ser lector</v-btn>
+            <v-btn class=botonencabezado to="/lectorhome">Ser lector</v-btn>
         </div>
         <div>
             <h1 class="Titulo" >
                 Crea historias maravillosas    
             </h1>
         </div>
-        
         <div>
             <router-link to="/">Logout</router-link>            
             <v-btn class="avatarbutton" icon="mdi-account" size="small">
@@ -41,21 +39,18 @@
             <thead>
                 <tr>
                     <th class="text-left">
-                    Título
+                        Título
                     </th>
                     <th class="text-left">
-                    Fecha de edicion
+                        Fecha de edicion
                     </th>
                     <th class="text-left">
-                    Estado
+                        Estado
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                >
+                <tr v-for="item in desserts" :key="item.name">
                     <td>{{ item.name }}</td>
                     <td>{{ item.fechaedit }}</td>
                     <td>{{ item.estado }}</td>
@@ -64,40 +59,32 @@
         </v-table>
 
         <div class="botones">
-            <v-btn class="botoneditar" to="/editarlibro">
+            <v-btn class="botons" to="/editarlibro">
                 Editar Historia
             </v-btn>
-            <v-btn class="botonecrear" to="/crearlibro">
+            <v-btn class="boton" to="/crearlibro">
                 Crear Historia
             </v-btn>
         </div>
     </body>
-    
-    
-    
-    
 </template>
         
 
 <style setup>
+    body{
+        background-color:#fff8dd ;
+    }
     .botones{
-        margin:1%;
-        color: white;
-        justify-content: flex-end;
-        float: left;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        margin-bottom: 20px;
     }
-    
-    .botoneditar{
-        margin-left: 1rem;
+    .boton{
+        margin: 0 10px;
         
-        justify-content: flex-end;
+        margin-bottom: 20px;
     }
-    .botoncrear{
-        margin-left: 1rem;
-        justify-content: flex-end;
-    }
-
-
     .encabezado{   
         display: flex;
         background-color: black;
