@@ -61,8 +61,6 @@ const routes = [
     path: '/mostrarlibro',
     name: 'mostrarlibro',
     component: () => import(/* webpackChunkName: "about" */ '../views/MostrandoLibro.vue'),
-
-    
   },
   {
     path: '/crearpagina',
