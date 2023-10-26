@@ -1,13 +1,12 @@
 <script>
-  export default {
+export default {
     data() {
       return {
         desserts: [
           {
-            name: 'Frozen Yogurt',
-            fechaedit: '10/09/2023',
-            estado: 'Publicado'
-
+            name: 'Helado de freza',
+            fechacreacion: '01/08/2023',
+            numero: '1'
           },
         ],
       }
@@ -19,14 +18,15 @@
     },
   },
 };
-
-
 </script>
 
-<template>
+<template>   
     <div class="encabezado">
         <div>
-          <v-btn to="/autorhome">atras</v-btn>
+            <v-btn to="/editarlibro">atras</v-btn>
+        </div>
+        <div>
+            <H1 class="Titulo">"Nombre del libro"</H1>
         </div>
         <div>
             <router-link to="/">Logout</router-link>
@@ -37,7 +37,6 @@
             </v-btn>    
         </div>
     </div>
-
     <body>
         <div>
             <v-table>
@@ -47,10 +46,10 @@
                     Título
                   </th>
                   <th class="text-left">
-                    Fecha de edicion
+                    Fecha de creacion
                   </th>
                   <th class="text-left">
-                    Estado
+                    Numero
                   </th>
                   <th class="Text-left">
                   </th>
@@ -61,10 +60,10 @@
               <tbody>
                 <tr v-for="item in desserts" :key="item.name">
                   <td>{{ item.name }}</td>
-                  <td>{{ item.fechaedit }}</td>
-                  <td>{{ item.estado }}</td>
+                  <td>{{ item.fechacreacion }}</td>
+                  <td>{{ item.numero }}</td>
                   <td>
-                    <v-btn to="/paginas">Paginas</v-btn>
+                    <v-btn>editar</v-btn>
                   </td>
                   <td>
                     <v-btn @click="onButtonClick(item)">Eliminar</v-btn>
@@ -73,13 +72,23 @@
               </tbody>
             </v-table>
         </div>
-    </body>
+        <div class="botones">
+            <v-btn class="botons" to="/crearpagina">
+                Agregar Pagina
+            </v-btn>
+        </div>
+    </body> 
+
 </template>
-   
+
 <style>
     body{
         background-color:#fff8dd ;
     }
+    .botones{
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        margin-bottom: 20px;
+    }
 </style>
-
-

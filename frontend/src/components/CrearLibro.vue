@@ -86,7 +86,7 @@
                 <v-btn class="boton" to="/crearpagina">
                     Páginas
                 </v-btn>
-                <v-btn class="boton"  @click="crearlibro"> 
+                <v-btn class="boton" to="/autorhome" @click="crearlibro"> 
                     Guardar
                 </v-btn>
             </div>
