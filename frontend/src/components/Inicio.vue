@@ -51,7 +51,9 @@
         font-size: 2rem;
         color: white;
     }
-
+    body{
+        background-color:#fff8dd ;
+    }
     .encabezado{
         display: flex;
         justify-content: space-between;

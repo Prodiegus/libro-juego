@@ -73,30 +73,38 @@ export default {
         </div>
     </div>
     <body>
-        <br>
-        <div class="titulo">
-            <v-text-field label="Titulo" variant="outlined" v-model="titulo" class="titulos" :maxlength="10" :counter="10"></v-text-field>
-        </div>
-        <br>
-        <div class="contenedor">
-            <div class="imagen">
-                <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage"> </div>
-                <input ref="fileInput" type="file" @input="pickFile">
+        <div class="maincontenedor">
+            <div class="titulo">
+                <v-text-field label="Titulo" variant="outlined" class="titulos" v-model="titulo" :maxlength="10" :counter="10"></v-text-field>
+            </div>
+            
+            <div class="contenedor">
+                <div class="imagen">
+                    <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage"> </div>
+
+                    <input ref="fileInput" type="file" @input="pickFile">
+                </div>
+
+                <div class="sinopsis">
+                    <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" :maxlength="100" :counter="100"></v-textarea>
+                </div>
             </div>
 
-            <div class="sinopsis">
-                <v-textarea label="Sinopsis" variant="outlined" class="textsinopsis" v-model="sinopsis" :maxlength="100" :counter="100"></v-textarea>
+            <div class="botones">
+                
+                <v-btn class="boton" to="/crearpagina">
+                    Páginas
+                </v-btn>
+                
+                
+                <v-btn class="boton"  @click="crearlibro"> 
+                    Guardar
+                </v-btn>
+                
+                
+                
             </div>
         </div>
-        <div class="botones">
-            <v-btn class="botonepagina" to="/crearpagina">
-                Páginas
-            </v-btn>
-            <v-btn class="botonecrear"  @click="crearlibro"> 
-                Guardar
-            </v-btn>
-        </div>
-        
     </body>
 
 </template>
@@ -108,6 +116,14 @@ export default {
 
 
 <style>
+body{
+    background-color:#fff8dd ;
+}
+.maincontenedor{
+    width: 75%;
+    margin: 0 auto;
+    
+}
 .imagePreviewWrapper {
     width: 250px;
     height: 250px;
@@ -118,27 +134,55 @@ export default {
     background-position: center center;
 }
 .titulo{
-    width: 25%;
+    width: 50%;
     margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.titulos{
+    width: 100%;
+    height: 100%;
+    background-color: #ccf0ff;
+    border: 2px solid #9988c4;
+    
+    padding: 10px; /* Relleno opcional */
 }
 .contenedor{
     display: flex;
-    width: 75%;
-    margin: 0 auto;
+    width: 95%;
+    margin: 0;
+    margin-bottom: 30px
 }
 .imagen{
     flex: 1;
+    background-color: #ccf0ff;
+    border: 2px solid #9988c4;
+    margin: 0 30px;
 }
 .sinopsis{
     flex: 1;
 }
-.textsinopsis{
+.textsinopsis {
     width: 100%;
     height: 100%;
+    background-color: #ccf0ff;
+    border: 2px solid #9988c4;
+    
+    padding: 10px; /* Relleno opcional */
 }
 .botones{
-    margin: 0 auto;
-    color: white;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-bottom: 20px;
 }
+.boton{
+    margin: 0 10px;
+    
+    margin-bottom: 20px;
+}
+
+
+
 </style>
 

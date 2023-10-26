@@ -18,7 +18,7 @@
 <template>
     <div class="encabezado">
         <div>
-          <v-btn to="/lectorhome">Ser lector</v-btn>
+          <v-btn class=botonencabezado to="/lectorhome">Ser lector</v-btn>
         </div>
         <div>
             <h1 class="Titulo" >
@@ -64,10 +64,10 @@
         </v-table>
 
         <div class="botones">
-            <v-btn class="botoneditar" to="/editarlibro">
+            <v-btn class="botons" to="/editarlibro">
                 Editar Historia
             </v-btn>
-            <v-btn class="botonecrear" to="/crearlibro">
+            <v-btn class="boton" to="/crearlibro">
                 Crear Historia
             </v-btn>
         </div>
@@ -80,23 +80,23 @@
         
 
 <style setup>
+    body{
+        background-color:#fff8dd ;
+    }
     .botones{
-        margin:1%;
-        color: white;
-        justify-content: flex-end;
-        float: left;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        margin-bottom: 20px;
     }
-    
-    .botoneditar{
-        margin-left: 1rem;
+    .boton{
+        margin: 0 10px;
         
-        justify-content: flex-end;
-    }
-    .botoncrear{
-        margin-left: 1rem;
-        justify-content: flex-end;
+        margin-bottom: 20px;
     }
 
+    
+    
 
     .encabezado{   
         display: flex;

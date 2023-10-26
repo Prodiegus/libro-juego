@@ -108,12 +108,16 @@ export default {
 }
 </script>
 
-<style>   .Titulo {
+<style>   
+  .Titulo {
      font-size: 2rem;
      color: white;
      text-align: center;
    }
 
+   body{
+    background-color:#fff8dd ;
+  }
    .avatarbutton {
      border-color: aqua;
      border-width: 0.25rem;

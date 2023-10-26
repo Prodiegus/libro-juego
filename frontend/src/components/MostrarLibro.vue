@@ -101,7 +101,9 @@ img.grande{
         
 
     }
-
+    body{
+      background-color:#fff8dd ;
+    }
     .encabezado{
       
         display: flex;

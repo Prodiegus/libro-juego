@@ -89,7 +89,9 @@ methods: {
     justify-content: center;
     height: 100vh;
   }
-  
+  body{
+    background-color:#fff8dd ;
+  }
   .image-container {
     flex: 1;
     padding: 20px;
