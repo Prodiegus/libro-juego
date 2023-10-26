@@ -1,42 +1,39 @@
 <script>
-import Swal from 'sweetalert2';
-import API from '@/api';
-export default {
-data() {
+  import Swal from 'sweetalert2';
+  import API from '@/api';
+  export default {
+  data() {
     return {
     usuario: '',
     contraseña: '',
     };
-},
-methods: {
+  },
+  methods: {
     async logear() {
-        await API.loginusuario(
-            {
-                "usuario": this.usuario,
-                "contraseña": this.contraseña
-            }
-        )
-        .then((respuesta) => 
+      await API.loginusuario(
+        {
+          "usuario": this.usuario,
+          "contraseña": this.contraseña
+        }
+      )
+      .then((respuesta) => 
         {
           console.log(respuesta)
           if (respuesta.Login == true){
             Swal.fire({
-                icon: 'success',
-                title: 'Logeo Exitoso',
-                
-                
+              icon: 'success',
+              title: 'Logeo Exitoso',    
               })
             this.$store.state.usuario=respuesta.usuario
             console.log(this.$store.state.usuario)
             console.log("Logeo exitoso")
             this.$router.push({ path: '/lectorhome' })
 
-          } else{
+          }else{
             Swal.fire({
-                icon: 'error',
-                title: 'Error de Logeo',
-                text: 'Usuario o Contraseña incorrectos'
-                
+              icon: 'error',
+              title: 'Error de Logeo',
+              text: 'Usuario o Contraseña incorrectos'    
               })
             console.log("Error de logeo")
           }

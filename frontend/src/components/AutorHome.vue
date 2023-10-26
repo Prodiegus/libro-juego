@@ -1,31 +1,29 @@
 <script>
-  export default {
-    data() {
-      return {
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            fechaedit: '10/09/2023',
-            estado: 'Publicado'
-
-          },
-        ],
-      }
-    },
-  }
+    export default {
+        data() {
+            return {
+                desserts: [
+                    {
+                    name: 'Frozen Yogurt',
+                    fechaedit: '10/09/2023',
+                    estado: 'Publicado'
+                    },
+                ],
+            }
+        },
+    }
 </script>
 
 <template>
     <div class="encabezado">
         <div>
-          <v-btn class=botonencabezado to="/lectorhome">Ser lector</v-btn>
+            <v-btn class=botonencabezado to="/lectorhome">Ser lector</v-btn>
         </div>
         <div>
             <h1 class="Titulo" >
                 Crea historias maravillosas    
             </h1>
         </div>
-        
         <div>
             <router-link to="/">Logout</router-link>            
             <v-btn class="avatarbutton" icon="mdi-account" size="small">
@@ -41,21 +39,18 @@
             <thead>
                 <tr>
                     <th class="text-left">
-                    Título
+                        Título
                     </th>
                     <th class="text-left">
-                    Fecha de edicion
+                        Fecha de edicion
                     </th>
                     <th class="text-left">
-                    Estado
+                        Estado
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr
-                    v-for="item in desserts"
-                    :key="item.name"
-                >
+                <tr v-for="item in desserts" :key="item.name">
                     <td>{{ item.name }}</td>
                     <td>{{ item.fechaedit }}</td>
                     <td>{{ item.estado }}</td>
@@ -72,10 +67,6 @@
             </v-btn>
         </div>
     </body>
-    
-    
-    
-    
 </template>
         
 
@@ -94,10 +85,6 @@
         
         margin-bottom: 20px;
     }
-
-    
-    
-
     .encabezado{   
         display: flex;
         background-color: black;

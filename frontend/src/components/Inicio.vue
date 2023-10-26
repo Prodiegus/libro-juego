@@ -3,16 +3,14 @@
 <script>
     import API from '@/api';
     export default {
-    data() {
-        return {
-            usuario:'',
-            contraseña:''
-        };
-    },
-
+        data() {
+            return {
+                usuario:'',
+                contraseña:''
+            };
+        },
     mounted() {
     },
-
     methods: {
     },
 };
@@ -24,18 +22,15 @@
             <h1 class="Titulo">
                 Bienvenido a Libro-Juegos
             </h1>
-            <div class="botones"> <!-- en este div van los botones de la interfaz -->
-                
+            <div class="botones"> <!-- en este div van los botones de la interfaz -->          
                 <v-btn class="botonLogin" @click="login" variant="tonal" to="/login">
                     Iniciar sesión              
                 </v-btn>
-                
                 <v-btn class="botonSingUp" variant="tonal" to="/signup">
                     Registrarse
                 </v-btn>
             </div>
         </div>
-        
         <!-- se implementa la descripcion de la pagina de inicio -->
         <div class="descripcion">
             <h2>Espacio para explorar tu creatividad</h2>
@@ -44,7 +39,7 @@
             </p>
         </div>
     </div>
-    </template>
+</template>
 
 <style setup>   
     .Titulo{
@@ -60,7 +55,6 @@
         padding-left: 2rem;
         background-color: black;
     }
-
     .descripcion{
         color: white;
         font-size: 1.25rem;
@@ -76,17 +70,13 @@
         margin-left:2%;
         margin-top:3%;
     }
-
     .botones{
         margin:1%;
-        color: white;
-        
+        color: white;   
     }
-
     .botonSingUp{
         margin-left:1rem;
     }
-
     .fondo{
         background:url(../../imagenes/fondo.jpg);
         background-repeat: no-repeat;
