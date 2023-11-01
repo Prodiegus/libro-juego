@@ -128,4 +128,7 @@ button:hover {
 .redirigir{
     display: inline;
 }
+body{
+    background-color:#fff8dd ;
+}
 </style>
